@@ -56,7 +56,8 @@ Y = labelencoder_Y_fit
 
 # Splitting the dataset into the Training set and Test set
 from sklearn.cross_validation import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
+# split 20% for testing  using random number generator & assign train, test X, Y arrays
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.2, random_state = 0)
 
 # Feature Scaling
 """from sklearn.preprocessing import StandardScaler
