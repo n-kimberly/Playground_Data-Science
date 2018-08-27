@@ -43,10 +43,11 @@ class RandomWalk():
         np_y_steps = np.array(self.y_steps)
         z_steps = np_x_steps * np_x_steps
         
+        plt.figure(figsize=(10, 6))
         plt.scatter(self.x_steps, self.y_steps, c=z_steps, cmap=plt.cm.Greens_r, edgecolor='none', s=40)
         plt.scatter(0, 0, c='blue', s=1000, marker='x')
         
-        plt.title("Random Walk", fontsize=42)
+        plt.title("Random Walk", fontsize=30)
         plt.xlabel("Lateral", fontsize=22)
         plt.ylabel("Longitudinal", fontsize=22)
 
