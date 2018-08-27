@@ -1,3 +1,4 @@
+import time
 from random import choice
 import numpy as np
 import matplotlib.pyplot as plt
@@ -32,6 +33,15 @@ class RandomWalk():
 
             self.x_steps.append(next_x)
             self.y_steps.append(next_y)
+
+            ### caption section out if you don't want to animate
+            """
+            time.sleep(0.05)
+            f = open("inputstream", "a")
+            ln = str(next_x) + "," + str(next_y) + "\n"
+            f.write(ln)
+            """
+            ###
             
             self.curr_step += 1
 
@@ -43,7 +53,7 @@ class RandomWalk():
         np_y_steps = np.array(self.y_steps)
         z_steps = np_x_steps * np_x_steps
         
-        plt.figure(figsize=(10, 6))
+        plt.figure(figsize=(10, 6), dpi=256)
         plt.scatter(self.x_steps, self.y_steps, c=z_steps, cmap=plt.cm.Greens_r, edgecolor='none', s=40)
         plt.scatter(0, 0, c='blue', s=1000, marker='x')
         
